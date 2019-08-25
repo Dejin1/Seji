@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\OnEnableOpenScene.cs" />
     <Compile Include="Assets\Scripts\SettingsAudio.cs" />
+    <Compile Include="Assets\VillagerBehavior.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/All/Program Files/UnityCreatedGames/Seji/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
