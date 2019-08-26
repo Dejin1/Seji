@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController
+public static class EnemyController
 {
     public static float enemySpeed = 2f;
 

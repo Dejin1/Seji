@@ -54,6 +54,5 @@ public class VillagerSpawner : MonoBehaviour
         }
         villager.SetActive(true);
         VillagerController.travelers++;
-        Debug.Log("Travelers: " + VillagerController.travelers);
     }
 }
