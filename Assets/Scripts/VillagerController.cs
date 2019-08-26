@@ -13,4 +13,8 @@ public static class VillagerController
     public static List<Vector3> travelPoints;
 
     public static int successes = 0;
+    public static int travelers = 0;
+
+    public static bool isSpawning = true;
+    public static float spawnTimer = 1f;
 }

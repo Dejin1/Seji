@@ -5,30 +5,34 @@ using UnityEngine;
 
 public class VillagerSpawner : MonoBehaviour
 {
-    public float villagerSpawnTimer = 1f;
     private float spawnTimer = 0;
-    public bool isSpawning = false;
     [SerializeField] private GameObject villagerPrefab;
     [SerializeField] private Transform travelPoints;
     
     private void Awake()
     {
-        VillagerController.travelPoints = new List<Vector3>();
+        VillagerController.travelPoints = PopulateList();
+    }
+
+    List<Vector3> PopulateList()
+    {
+        List<Vector3> temporaryList = new List<Vector3>();
         for (int i = 0; i < this.travelPoints.childCount; i++)
         {
             Transform child = this.travelPoints.GetChild(i);
             if (child != null)
             {
-                VillagerController.travelPoints.Add(child.position);
+                temporaryList.Add(child.position);
             }
         }
+        return temporaryList;
     }
 
     private void Update()
     {
-        if (!isSpawning) return;
+        if (!EnemyController.isSpawning) return;
         if(spawnTimer >= 0) { spawnTimer -= Time.deltaTime; return; }
-        spawnTimer = villagerSpawnTimer;
+        spawnTimer = VillagerController.spawnTimer;
 
         Spawner();
     }
@@ -49,5 +53,7 @@ public class VillagerSpawner : MonoBehaviour
             villager = Instantiate(villagerPrefab, transform);
         }
         villager.SetActive(true);
+        VillagerController.travelers++;
+        Debug.Log("Travelers: " + VillagerController.travelers);
     }
 }
