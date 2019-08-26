@@ -5,14 +5,17 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    //Currency Text and TxtValues for UI
     public Text currencyText;
     public Text currencyValueText;
     public Text currencyTextUnits;
     public Text currencyValueTextUnits;
+
+    //Population Text and TxtValues for UI
     public Text populationText;
     public Text populationValueText;
-    public int currency;
-    public float population;
+
+    //Vars
     public int speed;
     public Image speedGrn;
     public Image speedRed;
@@ -20,18 +23,35 @@ public class PlayerController : MonoBehaviour
     public bool unitsBtnWasClicked = true;
     public GameObject allUnits;
 
+    //Units
+    public ScriptableUnits Unit1;
+    public ScriptableUnits Unit2;
+    public ScriptableUnits Unit3;
+
+    //Unit UI Vars
+    public Image U1_Image;
+    public Text U1_txtType;
+    public Text U1_txtCost;
+    public Image U2_image;
+    public Text U2_txtType;
+    public Text U2_txtCost;
+    public Image U3_Image;
+    public Text U3_txtType;
+    public Text U3_txtCost;
+
     // Start is called before the first frame update
     void Start()
     {
         GetSpeed();
+        setUnitsUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        currencyValueText.text = currency.ToString();
-        currencyValueTextUnits.text = currency.ToString();
-        populationValueText.text = population.ToString();
+        currencyValueText.text = GameManager.currency.ToString();
+        currencyValueTextUnits.text = GameManager.currency.ToString();
+        populationValueText.text = GameManager.population.ToString();
     }
 
     public void SpeedChange()
@@ -86,6 +106,19 @@ public class PlayerController : MonoBehaviour
             populationText.gameObject.SetActive(true);
             populationValueText.gameObject.SetActive(true);
         }
+    }
+
+    void setUnitsUI()
+    {
+        U1_Image.sprite = Unit1.unitImage;
+        U1_txtType.text = Unit1.unitType;
+        U1_txtCost.text = Unit1.unitCost.ToString();
+        U2_image.sprite = Unit2.unitImage;
+        U2_txtType.text = Unit2.unitType;
+        U2_txtCost.text = Unit2.unitCost.ToString();
+        U3_Image.sprite = Unit3.unitImage;
+        U3_txtType.text = Unit3.unitType;
+        U3_txtCost.text = Unit3.unitCost.ToString();
     }
 
     void GetSpeed()

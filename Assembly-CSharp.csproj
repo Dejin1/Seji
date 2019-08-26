@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\VillagerBehavior.cs" />
     <Compile Include="Assets\Scripts\VillagerController.cs" />
     <Compile Include="Assets\Scripts\VillagerSpawner.cs" />
+    <Compile Include="Assets\Unit Objects\ScriptableUnits.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/All/Program Files/UnityCreatedGames/Seji/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
