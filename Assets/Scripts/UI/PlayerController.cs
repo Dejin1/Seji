@@ -6,15 +6,20 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public Text currencyText;
+    public Text currencyValueText;
     public Text currencyTextUnits;
-    public int currency;
+    public Text currencyValueTextUnits;
     public Text populationText;
+    public Text populationValueText;
+    public int currency;
     public float population;
     public int speed;
     public Image speedGrn;
     public Image speedRed;
     public Image speedYellow;
-   
+    public bool unitsBtnWasClicked = true;
+    public GameObject allUnits;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +29,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currencyText.text = currency.ToString();
-        currencyTextUnits.text = currency.ToString();
-        populationText.text = population.ToString();
+        currencyValueText.text = currency.ToString();
+        currencyValueTextUnits.text = currency.ToString();
+        populationValueText.text = population.ToString();
     }
 
     public void SpeedChange()
@@ -49,6 +54,37 @@ public class PlayerController : MonoBehaviour
             default:
                 Debug.Log("Error Speed variable not 1-3");
                 break;
+        }
+    }
+
+    public void UnitsBtnClick()
+    {
+        if (unitsBtnWasClicked)
+        {
+            unitsBtnWasClicked = false;
+            //Hide These
+            currencyText.gameObject.SetActive(false);
+            currencyValueText.gameObject.SetActive(false);
+            populationText.gameObject.SetActive(false);
+            populationValueText.gameObject.SetActive(false);
+            //Show These
+            allUnits.gameObject.SetActive(true);
+            currencyTextUnits.gameObject.SetActive(true);
+            currencyValueTextUnits.gameObject.SetActive(true);
+        }
+        else
+        {
+            unitsBtnWasClicked = true;
+            //Hide These
+            allUnits.gameObject.SetActive(false);
+            currencyTextUnits.gameObject.SetActive(false);
+            currencyValueTextUnits.gameObject.SetActive(false);
+
+            //Show These
+            currencyText.gameObject.SetActive(true);
+            currencyValueText.gameObject.SetActive(true);
+            populationText.gameObject.SetActive(true);
+            populationValueText.gameObject.SetActive(true);
         }
     }
 
