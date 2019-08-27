@@ -15,4 +15,4 @@ MonoBehaviour:
   unitName: Unit2
   unitType: Stationary
   unitCost: 0
-  unitImage: {fileID: 21300000, guid: 2ae3e218101085d44af38421768844fd, type: 3}
+  unitImage: {fileID: 21300000, guid: 3b29c571621a8fe44be54afd28b120ea, type: 3}

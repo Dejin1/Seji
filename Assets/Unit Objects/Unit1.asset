@@ -15,4 +15,4 @@ MonoBehaviour:
   unitName: Unit1
   unitType: Patrol
   unitCost: 0
-  unitImage: {fileID: 21300000, guid: 6b381336e3e70554fb75013d5270d92d, type: 3}
+  unitImage: {fileID: 21300000, guid: f36abb4af7c18984d9c789a02ccdfd44, type: 3}
