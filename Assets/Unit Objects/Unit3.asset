@@ -15,4 +15,4 @@ MonoBehaviour:
   unitName: Unit3
   unitType: Ranged
   unitCost: 0
-  unitImage: {fileID: 21300000, guid: a89f1c42e2aefe243b3c326ef8b2fa53, type: 3}
+  unitImage: {fileID: 21300000, guid: 8d8fe93ff4c3c8e4a8d8813b2aff0ee8, type: 3}
