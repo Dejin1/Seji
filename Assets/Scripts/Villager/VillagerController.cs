@@ -16,5 +16,5 @@ public static class VillagerController
     public static int travelers = 0;
 
     public static bool isSpawning = true;
-    public static float spawnTimer = 1f;
+    public static float spawnTimer = 5f;
 }

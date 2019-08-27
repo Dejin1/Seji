@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class EnemyController
 {
-    public static float enemySpeed = 2f;
+    public static float enemySpeed = 1f;
 
     public static List<Vector3> spawners;
     public static List<Vector3> targets;
@@ -13,5 +13,5 @@ public static class EnemyController
     public static int attacked = 0;
 
     public static bool isSpawning = true;
-    public static float spawnTimer = 2f;
+    public static float spawnTimer = 10f;
 }

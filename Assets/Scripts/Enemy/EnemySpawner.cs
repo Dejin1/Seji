@@ -55,7 +55,6 @@ public class EnemySpawner : MonoBehaviour
         }
         enemy.SetActive(true);
         AssignEnemy(enemy);
-        EnemyController.attacked++;
     }
 
     private void AssignEnemy(GameObject enemy)

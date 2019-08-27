@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class VillagerBehavior : MonoBehaviour
 {
-    [SerializeField] private Transform travelerPoints = null;
     private bool isReversed = false;
     private int travelIndex;
     public float moveSpeed;
