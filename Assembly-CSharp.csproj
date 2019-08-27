@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AudioController.cs" />
+    <Compile Include="Assets\Scripts\Defenses\ArcherBehavior.cs" />
     <Compile Include="Assets\Scripts\Defenses\DefenseController.cs" />
     <Compile Include="Assets\Scripts\Defenses\PatrolBehavior.cs" />
     <Compile Include="Assets\Scripts\Defenses\PatrolSpawner.cs" />
