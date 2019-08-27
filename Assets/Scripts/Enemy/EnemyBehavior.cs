@@ -30,7 +30,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void FindVillager()
     {
-        Debug.Log("FINDING VILLAGER");
+       //Debug.Log("FINDING VILLAGER");
     }
 
     private void MoveEnemy()

@@ -72,9 +72,9 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\OnEnableOpenScene.cs" />
     <Compile Include="Assets\Scripts\SettingsAudio.cs" />
-    <Compile Include="Assets\Scripts\test.cs" />
     <Compile Include="Assets\Scripts\UI\GameTimer.cs" />
     <Compile Include="Assets\Scripts\UI\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\UI\UnitPlacement.cs" />
     <Compile Include="Assets\Scripts\Villager\VillagerBehavior.cs" />
     <Compile Include="Assets\Scripts\Villager\VillagerController.cs" />
     <Compile Include="Assets\Scripts\Villager\VillagerSpawner.cs" />
