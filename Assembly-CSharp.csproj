@@ -63,16 +63,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AudioController.cs" />
-    <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
-    <Compile Include="Assets\Scripts\EnemyController.cs" />
-    <Compile Include="Assets\Scripts\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Defenses\DefenseController.cs" />
+    <Compile Include="Assets\Scripts\Defenses\PatrolBehavior.cs" />
+    <Compile Include="Assets\Scripts\Defenses\PatrolSpawner.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyBehavior.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\OnEnableOpenScene.cs" />
     <Compile Include="Assets\Scripts\SettingsAudio.cs" />
+    <Compile Include="Assets\Scripts\test.cs" />
+    <Compile Include="Assets\Scripts\UI\GameTimer.cs" />
     <Compile Include="Assets\Scripts\UI\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\VillagerBehavior.cs" />
-    <Compile Include="Assets\Scripts\VillagerController.cs" />
-    <Compile Include="Assets\Scripts\VillagerSpawner.cs" />
+    <Compile Include="Assets\Scripts\Villager\VillagerBehavior.cs" />
+    <Compile Include="Assets\Scripts\Villager\VillagerController.cs" />
+    <Compile Include="Assets\Scripts\Villager\VillagerSpawner.cs" />
     <Compile Include="Assets\Unit Objects\ScriptableUnits.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/All/Program Files/UnityCreatedGames/Seji/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
