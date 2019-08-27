@@ -12,6 +12,6 @@ public static class EnemyController
     public static int successes = 0;
     public static int attacked = 0;
 
-    public static bool isSpawning = true;
+    public static bool isSpawning = false;
     public static float spawnTimer = 10f;
 }

@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1f;
         GetSpeed();
         setUnitsUI();
     }
@@ -60,13 +61,16 @@ public class PlayerController : MonoBehaviour
         {
             case 1:
                 speed++;
+                Time.timeScale = 2f;
                 speedYellow.gameObject.SetActive(true);
                 break;
             case 2:
                 speed++;
+                Time.timeScale = 3f;
                 speedRed.gameObject.SetActive(true);
                 break;
             case 3:
+                Time.timeScale = 1f;
                 speedYellow.gameObject.SetActive(false);
                 speedRed.gameObject.SetActive(false);
                 speed = 1;

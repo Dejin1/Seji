@@ -104,4 +104,9 @@ public class EnemySpawner : MonoBehaviour
         }
         enemy.GetComponent<EnemyBehavior>().SetEnemy(EnemyController.spawners[spawnIndex], EnemyController.targets[targetIndex]);
     }
+
+    public void ChangeSpawnRate(float sliderValue)
+    {
+        EnemyController.spawnTimer = sliderValue * 10;
+    }
 }

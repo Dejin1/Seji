@@ -7,7 +7,6 @@ public class PatrolSpawner : MonoBehaviour
     [SerializeField] private Transform patrolPath;
     [SerializeField] private GameObject patrolPrefab;
     private int patrolCount = 0;
-    public int patrolAvailable = 3;
 
     private void Awake()
     {
@@ -30,7 +29,7 @@ public class PatrolSpawner : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && patrolCount < patrolAvailable)
+        if(Input.GetKeyDown(KeyCode.Space) && patrolCount < DefenseController.patrolAvailable)
         {
             Spawner();
         }

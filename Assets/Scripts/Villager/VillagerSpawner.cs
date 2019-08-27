@@ -55,4 +55,9 @@ public class VillagerSpawner : MonoBehaviour
         villager.SetActive(true);
         VillagerController.travelers++;
     }
+
+    public void ChangeSpawnRate(float sliderValue)
+    {
+        VillagerController.spawnTimer = sliderValue * 5;
+    }
 }

@@ -52,6 +52,10 @@ public class UnitPlacement : MonoBehaviour
 
         if (playerHasCash)
         {
+            if(currentUnit.unitObject == u1)
+            {
+                return;
+            }
             if (Input.GetMouseButtonDown(0))
             {
                 Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -75,13 +79,15 @@ public class UnitPlacement : MonoBehaviour
 
             }
         }
-        
     }
 
     public void setUnit1()
     {
-        Prefab = u1;
-        currentUnit = Unit1;
+        if (GameManager.currency >= Unit1.cost)
+        {
+            DefenseController.patrolAvailable++;
+            GameManager.currency -= Unit1.cost;
+        }
     }
 
     public void setUnit2()
