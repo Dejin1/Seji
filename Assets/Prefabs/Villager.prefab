@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7626213017620369734}
   - component: {fileID: 4235464757310324755}
   - component: {fileID: 1888788574}
-  - component: {fileID: 2197062451309755472}
+  - component: {fileID: -6066461422327077091}
   m_Layer: 0
   m_Name: Villager
   m_TagString: Villager
@@ -94,10 +94,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 751d4264990e43e4385947616649e17a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  travelerPoints: {fileID: 8069755987086252101, guid: bcc6ece67426e4644af3ee501ad294d1,
-    type: 3}
   moveSpeed: 1.5
---- !u!58 &2197062451309755472
+--- !u!58 &-6066461422327077091
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

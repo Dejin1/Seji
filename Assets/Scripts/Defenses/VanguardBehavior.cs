@@ -26,6 +26,7 @@ public class VanguardBehavior : MonoBehaviour
         }
         else if(currentStates == VanguardStates.Chasing)
         {
+            if(!engagementTarget.gameObject.activeInHierarchy) { currentStates = VanguardStates.Guarding; }
             transform.position = Vector3.MoveTowards(transform.position, engagementTarget.position, DefenseController.vanguardSpeed * Time.deltaTime);
         }
         else

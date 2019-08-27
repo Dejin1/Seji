@@ -21,7 +21,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if (!EnemyController.isSpawning) return;
         if (spawnTimer >= 0) { spawnTimer -= Time.deltaTime; return; }
-        spawnTimer = VillagerController.spawnTimer;
+        spawnTimer = EnemyController.spawnTimer;
 
         Spawner();
     }
