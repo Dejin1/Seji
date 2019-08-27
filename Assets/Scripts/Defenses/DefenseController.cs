@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DefenseController : MonoBehaviour
+public static class DefenseController
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public static float patrolSpeed = 1.5f;
+    public static float vanguardRadius = 2.0f;
+    public static float vanguardSpeed = 2.0f;
+    public static int defenses = 0;
+    public static List<Vector3> patrolPoints;
 }

@@ -5,12 +5,14 @@ public class EnemyBehavior : MonoBehaviour
 {
     Vector3 originPosition;
     Vector3 targetPosition;
+    private int health = 4;
     
-    private EnemyStates currentState;
+    public EnemyStates currentState;
     
 
     private void OnEnable()
     {
+        health = 4;
         currentState = EnemyStates.Inactive;
     }
 
@@ -19,18 +21,8 @@ public class EnemyBehavior : MonoBehaviour
         if (currentState == EnemyStates.Inactive) return;
         if(currentState == EnemyStates.Escaping && transform.position == originPosition) { gameObject.SetActive(false); }
         if(currentState == EnemyStates.MovingIn && transform.position == targetPosition) { currentState = EnemyStates.Pillaging; }
-
-        if(currentState == EnemyStates.Pillaging)
-        {
-            FindVillager();
-        }
-
+        
         MoveEnemy();
-    }
-
-    private void FindVillager()
-    {
-       //Debug.Log("FINDING VILLAGER");
     }
 
     private void MoveEnemy()
@@ -71,22 +63,44 @@ public class EnemyBehavior : MonoBehaviour
         currentState = EnemyStates.MovingIn;
     }
 
-    public void Engaged()
+    public void TakeDamage()
     {
-        currentState = EnemyStates.Engaged;
+        health--;
+        if(health <= 0)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Villager") && currentState != EnemyStates.Escaping && currentState != EnemyStates.Engaged)
+        if (collision.CompareTag("Villager") && currentState != EnemyStates.Engaged && currentState != EnemyStates.Escaping)
         {
-            EnemyController.successes++;
-            collision.gameObject.SetActive(false);
             currentState = EnemyStates.Escaping;
+            collision.gameObject.SetActive(false);
         }
-        else if (collision.CompareTag("Guard"))
+        else if (collision.CompareTag("Guard") && currentState != EnemyStates.Engaged)
         {
-            currentState = EnemyStates.Engaged;
+            if(collision.GetComponent<PatrolBehavior>() != null)
+            {
+                PatrolBehavior patrolBehavior = collision.GetComponent<PatrolBehavior>();
+                if(patrolBehavior.currentState != PatrolStates.Engaged)
+                {
+                    currentState = EnemyStates.Engaged;
+                    patrolBehavior.currentState = PatrolStates.Engaged;
+                    patrolBehavior.engagedTarget = transform;
+                }
+            }
+            else if (collision.GetComponent<VanguardBehavior>() != null)
+            {
+                VanguardBehavior vanguardBehavior = collision.GetComponent<VanguardBehavior>();
+                if(vanguardBehavior.currentStates != VanguardStates.Engaged)
+                {
+                    currentState = EnemyStates.Engaged;
+                    vanguardBehavior.currentStates = VanguardStates.Engaged;
+                    vanguardBehavior.engagementTarget = transform;
+                }
+            }
         }
     }
 }
