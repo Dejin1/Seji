@@ -41,6 +41,10 @@ public class UnitPlacement : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
         if (GameManager.currency >= currentUnit.cost)
         {
             playerHasCash = true;

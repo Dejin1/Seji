@@ -33,6 +33,12 @@ public class GameTimer : MonoBehaviour
                 timerEnded();
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
     }
 
     public void StartTimer()
